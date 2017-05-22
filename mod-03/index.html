@@ -4,6 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>AngularJS</title>
+
+    <style>
+    .ng-scope {
+        border: 2px dashed red;
+    }
+    </style>
 </head>
 
 <body>
@@ -12,11 +18,32 @@
     <div data-ng-app="myApp">
 
         <div data-ng-controller="FirstController">
+            FirstController
+            <div>
+                Data = {{result}}
+            </div>
+
             <div data-ng-controller="ChildController">
+                ChildController
+                The name is: {{theName}}
+
+                <p>
+                {{now | date:'short'}}
+                </p>
+
+                <button ng-click="trigger()">Trigger event</button>
+                <br>
+                <input type="text" ng-model='filterText'>
+                <ul>
+                    <li ng-repeat="d in data | filter:filterText">
+                        {{d.name}}
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <div data-ng-controller="SecondController">
+        <div data-ng-controller="SecondController as ctrl">
+            {{ ctrl.cat.name}}
         </div>
 
     </div>
