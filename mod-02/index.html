@@ -9,9 +9,46 @@
 <body>
     <h1>AngularJS Introduction</h1>
 
-    <div>
+    <div data-ng-app="myApp">
+        {{ 1 + 2 }}
+
+        <div data-ng-controller="DemoController">
+            <h2>The time is: {{now.toLocaleTimeString() }}</h2>
+            <div>
+                The cat is: {{ cat.name}}
+            </div>
+
+            <div>
+                The cat is: <span ng-bind="cat.name"></span>
+            </div>
+
+            <div>
+                <input type="text" ng-model="cat.name">
+            </div>
+
+
+            <ul>
+                <li ng-repeat="c in cats">
+                    <input type="text" ng-model="c.name">
+                    {{c.name}}
+                </li>
+            </ul>
+
+        </div>
+
+        <!--<div ng-controller="DemoController">
+            <div ng-controller="DemoController">
+
+            </div>
+
+        </div>-->
+
+
+
+
     </div>
 
+    <script src="/node_modules/angular/angular.js"></script>
     <script src="demo.js"></script>
 </body>
 
