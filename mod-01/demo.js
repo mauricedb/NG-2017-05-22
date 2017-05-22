@@ -28,7 +28,7 @@
 
     console.log(0.1 + 0.2 == 0.3)
 
-    console.log(Math.round(0.1 + 0.2, 2) == 0.3) //FixMe
+    console.log(+(0.1 + 0.2).toFixed(2) === 0.3);
 
     console.log(parseInt('0123', 10))
 
@@ -243,11 +243,11 @@ class Animal {
     var n = 1.2;
     console.log(n)
 
-    var nf = Intl.NumberFormat('nl-BE');
+    var nf = new Intl.NumberFormat('nl-BE');
     console.log('1.2 in Dutch format', nf.format(n));
 
     var d = new Date();
-    var dtf = Intl.DateTimeFormat('nl-BE')
+    var dtf = new Intl.DateTimeFormat('nl-BE')
     console.log(dtf.format(d));
 }())
 
