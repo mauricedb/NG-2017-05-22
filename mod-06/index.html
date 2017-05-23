@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Single Page Applications</title>
+    <base href="/" />
+</head>
+
+<body>
+    <h1>Single Page Applications using AngularJS</h1>
+
+    <div ng-app="myApp">
+
+        <nav>
+            <a href="#!/cat">Cats</a>
+            <a href="#!/dog">Dogs</a>
+            
+        </nav>
+        <div ng-view="">
+           Loading application...
+        </div>
+    </div>
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="demo.js"></script>
+</body>
+
+</html>
