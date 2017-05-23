@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Data entry</title>
+
+    <style>
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Data entry using AngularJS</h1>
+
+    <div ng-app="myApp">
+
+        <div ng-controller="CatEditorController">
+            <h2>The cat</h2>
+            <div>
+                <label>Name</label>
+                <input type="text">
+            </div>
+            <div>
+                <label>Age</label>
+                <input type="text">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="demo.js"></script>
+</body>
+
+</html>
