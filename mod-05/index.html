@@ -11,6 +11,18 @@
             width: 100px;
             text-align: right;
         }
+
+        .ng-invalid {
+            border-color: red;
+        }
+
+        .ng-valid {
+            border-color: green;
+        }
+
+        .error-message {
+            background-color: coral;
+        }
     </style>
 </head>
 
@@ -20,17 +32,34 @@
     <div ng-app="myApp">
 
         <div ng-controller="CatEditorController">
-            <h2>The cat</h2>
-            <div>
-                <label>Name</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Age</label>
-                <input type="text">
-            </div>
-        </div>
+            <form name="theForm">
+                <h2>The cat</h2>
+                <div>
+                    <label>Name</label>
+                    <input type="text" name="catName" ng-model="cat.name" ng-required="true" ng-minlength="2">
+                    <!--ng-model-options="{debounce: 1000}"-->
+                    {{cat.name}}
+                    <div class="error-message" ng-if="theForm.catName.$error.required">
+                     The cat name is required   
+                    </div>
+                    <div class="error-message" ng-if="theForm.catName.$error.minlength">
+                     The cat name is to short   
+                    </div>
 
+                </div>
+                <div>
+                    <label>Age</label>
+                    <input type="number" name="catAge" ng-model="cat.age" ng-min="0" ng-max="25">
+                </div>
+
+                <div>
+                    <button ng-disabled="theForm.$invalid || theForm.$pristine">Save</button>
+                </div>
+                <div>
+                    {{ theForm | json }}
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="/node_modules/angular/angular.js"></script>
