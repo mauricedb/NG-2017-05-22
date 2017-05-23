@@ -10,12 +10,18 @@
 <body>
     <h1>AngularJS &amp; AJAX</h1>
 
-    <div data-ng-app="myApp">
+    <div ng-app="myApp" ng-controller="MoviesController">
+        <ul>
+            <li ng-repeat="movie in movies">
+                {{movie.title}}
 
-
+                <img ng-src="{{movie.poster_path}}" alt="">
+            </li>
+        </ul>
     </div>
 
     <script src="./angular.js"></script>
+    <script src="./angular-resource.js"></script>
     <script src="./demo.js"></script>
 </body>
 
