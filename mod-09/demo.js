@@ -1,8 +1,5 @@
-(function () {
-  angular.module("myApp", []).controller("DemoController", function ($scope) {
-    $scope.cat = {
-      name: "Zorro"
-    };
-    $scope.catName = "Sara";
-  })
-})();
+import angular from "angular";
+import DemoController from './demoController';
+
+angular.module("myApp", [])
+  .controller("DemoController", DemoController);

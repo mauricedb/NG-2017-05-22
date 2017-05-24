@@ -4,6 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>AngularJS Patterns</title>
+
+    <style>
+    
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+        </style>
 </head>
 
 <body>
@@ -12,14 +19,14 @@
     <div data-ng-app="myApp">
 
         <div data-ng-controller="DemoController">
-            <div>
+            <div  class="ng-cloak">
                 The cat is: {{ catName}}
             </div>
 
             <div>
                 <input type="text" ng-model="catName">
             </div>
-            <div>
+            <div ng-if="true">
                 <input type="text" ng-model="catName">
             </div>
 
@@ -30,13 +37,21 @@
             <div>
                 <input type="text" ng-model="cat.name">
             </div>
+            <div ng-if="true">
+                <input type="text" ng-model="cat.name">
+            </div>
 
-
+            <ul class="ng-cloak">
+                <li ng-repeat="i in [1,2,3]">
+                    {{i}}
+                </li>
+            </ul>
         </div>
     </div>
-
+<!--
     <script src="/node_modules/angular/angular.js"></script>
-    <script src="demo.js"></script>
+    <script src="demo.js"></script>-->
+    <script src="demo.bundle.js"></script>
 </body>
 
 </html>
