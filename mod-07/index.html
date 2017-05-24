@@ -10,7 +10,30 @@
     <h1>AngularJS Directives</h1>
 
     <div ng-app="myApp">
+         ScopeId = {{$id}}
         <div ng-controller="MainController">
+            <div>
+                Value: {{value}}
+                 ScopeId = {{$id}}
+            </div>
+            <div my-click="" my-message="Hello" my-value="value">
+                This is a div
+                 ScopeId = {{$id}}
+                 Value: {{value}}
+            </div>
+            <div my-click="" my:message="Bye">
+                This is a second div
+                 ScopeId = {{$id}}
+                Value: {{value}}
+            </div>
+
+{{catWidth}}
+            <my-cat>this cat 1</my-cat>
+            <my-cat img-width="{{catWidth}}">this is cat two</my-cat>
+            <my-cat></my-cat>
+            <my-cat></my-cat>
+            <my-cat></my-cat>
+            <my-cat></my-cat>
         </div>
 
     </div>
